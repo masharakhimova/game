@@ -3,6 +3,9 @@ from random import *
 
 class PlusDamage(pg.sprite.Sprite):
     def __init__(self, game):
+        '''
+        инициализация картинки оружия и случайное ее размещение на поле
+        '''
         pg.init()
         super().__init__()
         self.scr = game.scr
@@ -15,6 +18,7 @@ class PlusDamage(pg.sprite.Sprite):
         self.y = choice(game.settings.oy)
 
     def update(self):
+        #появление оружия на экране
         self.damage_rect.x = self.x
         self.damage_rect.y = self.y
         self.scr.blit(self.damage, self.damage_rect)
